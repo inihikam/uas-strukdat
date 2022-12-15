@@ -2,21 +2,21 @@
 
 int main()
 {
-    int dataList = 20;
-    string listLagu[dataList] = {"Scared",
+    string listLagu[8] = {"The Truth Untold",
                            "All the kids are depressed",
                            "Daylight",
                            "18",
-                           "One Time",
+                           "Breathe",
                            "Ghost",
-                           "Circles",
+                           "CandyPaint",
                            "Sunflower"};
 
-    int durasiLagu[dataList] = {3, 4, 4, 4, 3, 2, 3, 2};
-    string listGenre[dataList] = {"POP", "POP", "POP", "POP",
-                            "POP", "POP", "POP", "POP"};
-    int choose;
-    for (i = 0; i < 8; i++)
+    int durasiLagu[8] = {3, 4, 4, 4, 3, 2, 3, 2};
+    string listGenre[8] = {"Ballad", "POP", "POP", "POP",
+                            "Ballad", "POP", "Hiphop", "POP"};
+    string namaLagu, genreLagu;
+    int choose, durLagu;
+    for (int i = 0; i < 8; i++)
     {
         insertEnd(listLagu[i], durasiLagu[i], listGenre[i]);
     }
@@ -41,25 +41,16 @@ int main()
         case 1:
             system("cls");
             {
-                if (i == dataList)
-                {
-                    cout << "Penyimpanan lagu penuh!\n";
-                }
-                else
-                {
-                    cout << "Masukkan nama lagu   : "; 
-                    cin.ignore();
-                    getline(cin, listLagu[i]);
-                    cout << "Masukkan durasi lagu : "; 
-                    cin >> durasiLagu[i];
-                    cout << "Masukkan genre lagu  : "; 
-                    cin.ignore();
-                    getline(cin, listGenre[i]);
-                    cin >> listGenre[i];
-                    insertEnd(listLagu[i], durasiLagu[i], listGenre[i]);
-                    i++;
-                }
-
+                cout << "Masukkan nama lagu   : "; 
+                cin.ignore();
+                getline(cin, namaLagu);
+                cout << "Masukkan durasi lagu : "; 
+                cin >> durLagu;
+                cout << "Masukkan genre lagu  : "; 
+                cin.ignore();
+                getline(cin, genreLagu);
+                insertEnd(namaLagu, durLagu, genreLagu);
+                
                 getch();
                 break;
             }

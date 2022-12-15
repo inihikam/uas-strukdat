@@ -16,8 +16,6 @@ struct lagu
 lagu *head = NULL;
 lagu *tail = NULL;
 
-int i = 0;
-
 void insertEnd(string a, int b, string c)
 {
     lagu *baru;
@@ -68,7 +66,6 @@ void deleteSong()
             tail = NULL;
             found = true;
             delete hapus;
-            i--;
             break;
         }
 
@@ -82,7 +79,6 @@ void deleteSong()
             found = true;
             delete hapus;
             bantu = bantu->next;
-            i--;
             continue;
         }
 
@@ -95,7 +91,6 @@ void deleteSong()
             found = true;
             delete hapus;
             bantu = bantu->next;
-            i--;
             continue;
         }
 
@@ -109,8 +104,12 @@ void deleteSong()
             found = true;
             delete hapus;
             bantu = bantu->next;
-            i--;
             continue;
+        }
+
+        bantu = bantu->next;
+        if (bantu == head){
+            break;
         }
     } while (bantu != NULL);
 
